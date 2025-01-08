@@ -28,7 +28,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sshagent(credentials: ['vagrant_ssh']) {
-                    sh "ssh vagrant@192.168.1.183 'sudo docker run linabenmoussa150/angulardockerProject:${DOCKER_TAG}'"
+                    sh "ssh vagrant@20.20.100.4 'sudo docker run linabenmoussa150/angulardockerProject:${DOCKER_TAG}'"
                 }
             }
         }
