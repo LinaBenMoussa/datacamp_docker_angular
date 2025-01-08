@@ -5,6 +5,7 @@ RUN apk add --no-cache python3 make g++
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm install
+RUN npx browserslist@latest --update-db
 COPY . .
 RUN npm run build -- --prod
 ### STAGE 2: Run ###
